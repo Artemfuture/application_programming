@@ -1,0 +1,139 @@
+[
+    {
+        "User": {
+            "id": "4ea67e60-c146-11f0-a41a-00155d52fbaf",
+            "name": "Pety",
+            "email": "pety@gmail.com",
+            "phone_number": 777777777,
+            "passport": 4444444444,
+            "user_type": "owner"
+        }
+    },
+    {
+        "User": {
+            "id": "4ea67f42-c146-11f0-b2a8-00155d52fbaf",
+            "name": "Vasy",
+            "email": "vasy@gmail.com",
+            "phone_number": 8888888888,
+            "passport": 3333333333,
+            "user_type": "renter"
+        }
+    },
+    {
+        "Address": {
+            "id": "4ea67fdf-c146-11f0-91e4-00155d52fbaf",
+            "country": "Russia",
+            "city": "Moscow",
+            "street": "Pervay",
+            "house": 1,
+            "building": "c2",
+            "entrance": 3,
+            "floor": 4,
+            "flat_number": 765,
+            "postal_code": "123456",
+            "latitude": 1.4556,
+            "longitude": 54.6344
+        }
+    },
+    {
+        "Owner": {
+            "id": "4ea68040-c146-11f0-882d-00155d52fbaf",
+            "user_id": "4ea49bf0-c146-11f0-89e0-00155d52fbaf",
+            "owns_flat_id": [
+                "4ea5df0f-c146-11f0-b5d2-00155d52fbaf"
+            ],
+            "reviews": null
+        }
+    },
+    {
+        "Property": {
+            "id": "4ea68097-c146-11f0-855e-00155d52fbaf",
+            "owner_id": "4ea5df74-c146-11f0-8a94-00155d52fbaf",
+            "address_id": "4ea5df0f-c146-11f0-b5d2-00155d52fbaf",
+            "property_type": "appartment",
+            "description": "super room in the center of city",
+            "rooms": 1,
+            "beds": 1,
+            "bathrooms": 1,
+            "area": 10.0,
+            "amenities": [
+                "wi-fi",
+                "window",
+                "parking"
+            ]
+        }
+    },
+    {
+        "Advertisment": {
+            "id": "4ea6de98-c146-11f0-80b6-00155d52fbaf",
+            "address_id": "4ea5df0f-c146-11f0-b5d2-00155d52fbaf",
+            "owner_id": "4ea5df74-c146-11f0-8a94-00155d52fbaf",
+            "price_for_night": 1.2,
+            "start_date": "2025-11-11",
+            "end_date": "2025-11-13",
+            "property_id": "4ea5dfc7-c146-11f0-ba5a-00155d52fbaf",
+            "review_ids": null,
+            "status": "completed"
+        }
+    },
+    {
+        "Review_house": {
+            "id": "4ea6df58-c146-11f0-9872-00155d52fbaf",
+            "advertisment_id": "4ea5e032-c146-11f0-8675-00155d52fbaf",
+            "addres_id": "4ea5df0f-c146-11f0-b5d2-00155d52fbaf",
+            "renter_id": "4ea5de7d-c146-11f0-b4be-00155d52fbaf",
+            "rating": 5,
+            "comment": "super flat"
+        }
+    },
+    {
+        "Cards": {
+            "id": "4ea6dfb8-c146-11f0-963a-00155d52fbaf",
+            "user_id": "4ea5de7d-c146-11f0-b4be-00155d52fbaf",
+            "number": 1234556678,
+            "date": "06/32",
+            "csv": 123
+        }
+    },
+    {
+        "Renter": {
+            "id": "4ea6e00e-c146-11f0-92b0-00155d52fbaf",
+            "user_id": "4ea5de7d-c146-11f0-b4be-00155d52fbaf",
+            "reviewings": [
+                "4ea5e07f-c146-11f0-9333-00155d52fbaf"
+            ],
+            "curent_booking": null,
+            "cards": [
+                "4ea5e0f0-c146-11f0-bf29-00155d52fbaf"
+            ]
+        }
+    },
+    {
+        "Booking": {
+            "id": "4ea6e10b-c146-11f0-be81-00155d52fbaf",
+            "advertisement_id": "4ea5e032-c146-11f0-8675-00155d52fbaf",
+            "renter_id": "4ea5de7d-c146-11f0-b4be-00155d52fbaf",
+            "payment_id": "4ea5e1be-c146-11f0-bc55-00155d52fbaf",
+            "date_start": "2025-11-11",
+            "date_end": "2025-11-13",
+            "status": "proggres"
+        }
+    },
+    {
+        "Payment": {
+            "id": "4ea6e163-c146-11f0-8e49-00155d52fbaf",
+            "booking_id": "4ea5e16c-c146-11f0-92e7-00155d52fbaf",
+            "amount": 1234,
+            "status": "unpaid"
+        }
+    },
+    {
+        "Review_user": {
+            "id": "4ea6e1a7-c146-11f0-a0f3-00155d52fbaf",
+            "user_id_gave": "4ea49bf0-c146-11f0-89e0-00155d52fbaf",
+            "user_id_whom": "4ea5de7d-c146-11f0-b4be-00155d52fbaf",
+            "rating": 2,
+            "comment": "rude man"
+        }
+    }
+]

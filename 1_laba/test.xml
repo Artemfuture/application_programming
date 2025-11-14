@@ -1,0 +1,101 @@
+<?xml version="1.0" ?>
+<note>
+    <User id="4ea49bf0-c146-11f0-89e0-00155d52fbaf">
+        <name>Pety</name>
+        <email>pety@gmail.com</email>
+        <phone_number>777777777</phone_number>
+        <passport>4444444444</passport>
+        <user_type>owner</user_type>
+    </User>
+    <User id="4ea5de7d-c146-11f0-b4be-00155d52fbaf">
+        <name>Vasy</name>
+        <email>vasy@gmail.com</email>
+        <phone_number>8888888888</phone_number>
+        <passport>3333333333</passport>
+        <user_type>renter</user_type>
+    </User>
+    <Address id="4ea5df0f-c146-11f0-b5d2-00155d52fbaf">
+        <country>Russia</country>
+        <city>Moscow</city>
+        <street>Pervay</street>
+        <house>1</house>
+        <building>c2</building>
+        <entrance>3</entrance>
+        <floor>4</floor>
+        <flat_number>765</flat_number>
+        <postal_code>123456</postal_code>
+        <latitude>1.4556</latitude>
+        <longitude>54.6344</longitude>
+    </Address>
+    <Owner id="4ea5df74-c146-11f0-8a94-00155d52fbaf">
+        <user_id>4ea49bf0-c146-11f0-89e0-00155d52fbaf</user_id>
+        <owns_flat_id>
+            <flat>4ea5df0f-c146-11f0-b5d2-00155d52fbaf</flat>
+        </owns_flat_id>
+    </Owner>
+    <Property id="4ea5dfc7-c146-11f0-ba5a-00155d52fbaf">
+        <owner_id>4ea5df74-c146-11f0-8a94-00155d52fbaf</owner_id>
+        <address_id>4ea5df0f-c146-11f0-b5d2-00155d52fbaf</address_id>
+        <property_type>appartment</property_type>
+        <description>super room in the center of city</description>
+        <rooms>1</rooms>
+        <beds>1</beds>
+        <bathrooms>1</bathrooms>
+        <area>10.0</area>
+        <amenities>
+            <amentity>wi-fi</amentity>
+            <amentity>window</amentity>
+            <amentity>parking</amentity>
+        </amenities>
+    </Property>
+    <Advertisment id="4ea5e032-c146-11f0-8675-00155d52fbaf">
+        <address_id>4ea5df0f-c146-11f0-b5d2-00155d52fbaf</address_id>
+        <owner_id>4ea5df74-c146-11f0-8a94-00155d52fbaf</owner_id>
+        <price_for_night>1.2</price_for_night>
+        <start_date>2025-11-11</start_date>
+        <end_date>2025-11-13</end_date>
+        <property_id>4ea5dfc7-c146-11f0-ba5a-00155d52fbaf</property_id>
+        <status>completed</status>
+    </Advertisment>
+    <Review_house id="4ea5e07f-c146-11f0-9333-00155d52fbaf">
+        <advertisment_id>4ea5e032-c146-11f0-8675-00155d52fbaf</advertisment_id>
+        <addres_id>4ea5df0f-c146-11f0-b5d2-00155d52fbaf</addres_id>
+        <renter_id>4ea5de7d-c146-11f0-b4be-00155d52fbaf</renter_id>
+        <rating>5</rating>
+        <comment>super flat</comment>
+    </Review_house>
+    <Cards id="4ea5e0f0-c146-11f0-bf29-00155d52fbaf">
+        <user_id>4ea5de7d-c146-11f0-b4be-00155d52fbaf</user_id>
+        <number>1234556678</number>
+        <date>06/32</date>
+        <csv>123</csv>
+    </Cards>
+    <Renter id="4ea5e12f-c146-11f0-b3ca-00155d52fbaf">
+        <user_id>4ea5de7d-c146-11f0-b4be-00155d52fbaf</user_id>
+        <reviewings>
+            <review>4ea5e07f-c146-11f0-9333-00155d52fbaf</review>
+        </reviewings>
+        <cards>
+            <card>4ea5e0f0-c146-11f0-bf29-00155d52fbaf</card>
+        </cards>
+    </Renter>
+    <Booking id="4ea5e16c-c146-11f0-92e7-00155d52fbaf">
+        <advertisement_id>4ea5e032-c146-11f0-8675-00155d52fbaf</advertisement_id>
+        <renter_id>4ea5de7d-c146-11f0-b4be-00155d52fbaf</renter_id>
+        <payment_id>4ea5e1be-c146-11f0-bc55-00155d52fbaf</payment_id>
+        <date_start>2025-11-11</date_start>
+        <date_end>2025-11-13</date_end>
+        <status>proggres</status>
+    </Booking>
+    <Payment id="4ea5e1be-c146-11f0-bc55-00155d52fbaf">
+        <booking_id>4ea5e16c-c146-11f0-92e7-00155d52fbaf</booking_id>
+        <amount>1234</amount>
+        <status>unpaid</status>
+    </Payment>
+    <Review_user id="4ea5e1fd-c146-11f0-8b51-00155d52fbaf">
+        <user_id_gave>4ea49bf0-c146-11f0-89e0-00155d52fbaf</user_id_gave>
+        <user_id_whom>4ea5de7d-c146-11f0-b4be-00155d52fbaf</user_id_whom>
+        <rating>2</rating>
+        <comment>rude man</comment>
+    </Review_user>
+</note>
