@@ -12,10 +12,11 @@ class Manager:
         self.data = []
 
     def add(self, obj):
+        print(f"add {obj.__class__.__name__}")
         self.data.append(obj)
 
     def update(self, obj, **kwargs) -> bool:
-
+        print(f"update {obj.__class__.__name__}")
         result = obj.update(**kwargs)
         self.save_xml()
         self.save_json()
@@ -28,6 +29,7 @@ class Manager:
         return result
 
     def save_json(self):
+        print("saving to json")
         data = json.dumps(
             [{i.__class__.__name__: i.__dict__} for i in self.data],
             indent=4,
@@ -37,6 +39,7 @@ class Manager:
             f.write(data)
 
     def save_xml(self) -> None:
+        print("saving to xml")
         root = ET.Element("note")
         for classes in self.data:
             cl = classes.__class__.__name__
@@ -153,6 +156,7 @@ class Manager:
             file.write(root)
 
     def load_json(self):
+        print("load from json")
         result = []
         with open(self.json_path, "r", encoding="utf-8") as file:
             data = json.load(file)
@@ -201,6 +205,7 @@ class Manager:
         return result
 
     def load_xml(self):
+        print("load from xml")
         result = []
         tree = ET.parse(self.xml_path)
         root = tree.getroot()
