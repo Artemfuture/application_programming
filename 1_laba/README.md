@@ -1,3 +1,3 @@
 # 1 laboratory work
-!["UML"](/misk/img1.png)
-!["UML"](/misk/img2.png)
+!["UML1"](misk/img1.png)
+!["UML2"](misk/img2.png)
