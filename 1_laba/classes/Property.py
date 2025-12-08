@@ -12,19 +12,39 @@ class Property:
         rooms: int = None,
         beds: int = None,
         bathrooms: int = None,
-        area: float = None, 
-        amenities: list[str] = None, 
+        area: float = None,
+        amenities: list[str] = None,
     ):
-        self.id = str(uuid1())
-        self.owner_id = owner_id
-        self.address_id = address_id
-        self.property_type = property_type
-        self.description = description
-        self.rooms = rooms
-        self.beds = beds
-        self.bathrooms = bathrooms
-        self.area = area
-        self.amenities = amenities
+        try:
+            if not all(
+                [
+                    owner_id is None or isinstance(owner_id, str),
+                    address_id is None or isinstance(address_id, str),
+                    property_type is None or isinstance(property_type, str),
+                    description is None or isinstance(description, str),
+                    rooms is None or isinstance(rooms, int),
+                    beds is None or isinstance(beds, int),
+                    bathrooms is None or isinstance(bathrooms, int),
+                    area is None or isinstance(area, (int, float)),
+                    amenities is None or isinstance(amenities, list),
+                ]
+            ):
+                raise TypeError
+            self.id = str(uuid1())
+            self.owner_id = owner_id
+            self.address_id = address_id
+            self.property_type = property_type
+            self.description = description
+            self.rooms = rooms
+            self.beds = beds
+            self.bathrooms = bathrooms
+            self.area = area
+            self.amenities = amenities
+        except TypeError:
+            print("Error: something wrong with types")
+            return False
+        except:
+            print("Error with init Property")
 
     def update(
         self,
@@ -35,11 +55,25 @@ class Property:
         rooms: int = None,
         beds: int = None,
         bathrooms: int = None,
-        area: float = None,  
-        amenitie: str = None,  
+        area: float = None,
+        amenitie: str = None,
     ) -> bool:
         result = True
         try:
+            if not all(
+                [
+                    owner_id is None or isinstance(owner_id, str),
+                    address_id is None or isinstance(address_id, str),
+                    property_type is None or isinstance(property_type, str),
+                    description is None or isinstance(description, str),
+                    rooms is None or isinstance(rooms, int),
+                    beds is None or isinstance(beds, int),
+                    bathrooms is None or isinstance(bathrooms, int),
+                    area is None or isinstance(area, (int, float)),
+                    amenitie is None or isinstance(amenitie, str),
+                ]
+            ):
+                raise TypeError
             if owner_id:
                 self.owner_id = owner_id
             elif address_id:
@@ -60,6 +94,9 @@ class Property:
                 self.amenities.append(amenitie)
             else:
                 result = False
+        except TypeError:
+            print("Error: something wrong with types")
+            return False
         except:
             result = False
         return result

@@ -16,18 +16,40 @@ class Address:
         latitude: float = None,
         longitude: float = None,
     ):
-        self.id = str(uuid1())
-        self.country = country
-        self.city = city
-        self.street = street
-        self.house = house
-        self.building = building
-        self.entrance = entrance
-        self.floor = floor
-        self.flat_number = flat_number
-        self.postal_code = postal_code
-        self.latitude = latitude
-        self.longitude = longitude
+        try:
+            if not all(
+                [
+                    country is None or isinstance(country, str),
+                    city is None or isinstance(city, str),
+                    street is None or isinstance(street, str),
+                    house is None or isinstance(house, int),
+                    building is None or isinstance(building, str),
+                    entrance is None or isinstance(entrance, int),
+                    floor is None or isinstance(floor, int),
+                    flat_number is None or isinstance(flat_number, int),
+                    postal_code is None or isinstance(postal_code, str),
+                    latitude is None or isinstance(latitude, float),
+                    longitude is None or isinstance(longitude, float),
+                ]
+            ):
+                raise TypeError
+            self.id = str(uuid1())
+            self.country = country
+            self.city = city
+            self.street = street
+            self.house = house
+            self.building = building
+            self.entrance = entrance
+            self.floor = floor
+            self.flat_number = flat_number
+            self.postal_code = postal_code
+            self.latitude = latitude
+            self.longitude = longitude
+        except TypeError:
+            print("Error: something wrong with types")
+            return False
+        except:
+            print("Error with init Adverstisment")
 
     def update(
         self,
@@ -45,6 +67,22 @@ class Address:
     ) -> bool:
         result = True
         try:
+            if not all(
+                [
+                    country is None or isinstance(country, str),
+                    city is None or isinstance(city, str),
+                    street is None or isinstance(street, str),
+                    house is None or isinstance(house, int),
+                    building is None or isinstance(building, str),
+                    entrance is None or isinstance(entrance, int),
+                    floor is None or isinstance(floor, int),
+                    flat_number is None or isinstance(flat_number, int),
+                    postal_code is None or isinstance(postal_code, str),
+                    latitude is None or isinstance(latitude, float),
+                    longitude is None or isinstance(longitude, float),
+                ]
+            ):
+                raise TypeError
             if country:
                 self.country = country
             elif city:
@@ -69,6 +107,9 @@ class Address:
                 self.longitude = longitude
             else:
                 result = False
+        except TypeError:
+            print("Error: something wrong with types")
+            return False
         except:
             result = False
         return result

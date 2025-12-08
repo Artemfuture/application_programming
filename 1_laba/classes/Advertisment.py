@@ -13,21 +13,40 @@ class Advertisment:
         end_date: date = None,
         property_id: str = None,
         review_ids: list[str] = None,
-        status: str = "pending", # pending, confirmed, canceled, completed
+        status: str = "pending",  # pending, confirmed, canceled, completed
     ):
         """
         id - uniq id
         """
-
-        self.id = str(uuid1())
-        self.address_id = address_id
-        self.owner_id = owner_id
-        self.price_for_night = price_for_night
-        self.start_date = start_date
-        self.end_date = end_date
-        self.property_id = property_id
-        self.review_ids = review_ids
-        self.status = status
+        try:
+            if not all(
+                [
+                    address_id is None or isinstance(address_id, str),
+                    owner_id is None or isinstance(owner_id, str),
+                    price_for_night is None
+                    or isinstance(price_for_night, (int, float)),
+                    start_date is None or isinstance(start_date, date),
+                    end_date is None or isinstance(end_date, date),
+                    property_id is None or isinstance(property_id, str),
+                    review_ids is None or isinstance(review_ids, list),
+                    status is None or isinstance(status, str),
+                ]
+            ):
+                raise TypeError
+            self.id = str(uuid1())
+            self.address_id = address_id
+            self.owner_id = owner_id
+            self.price_for_night = price_for_night
+            self.start_date = start_date
+            self.end_date = end_date
+            self.property_id = property_id
+            self.review_ids = review_ids
+            self.status = status
+        except TypeError:
+            print("Error: something wrong with types")
+            return False
+        except:
+            print("Error with init Adverstisment")
 
     def update(
         self,
@@ -42,6 +61,20 @@ class Advertisment:
     ) -> bool:
         result = True
         try:
+            if not all(
+                [
+                    address_id is None or isinstance(address_id, str),
+                    owner_id is None or isinstance(owner_id, str),
+                    price_for_night is None
+                    or isinstance(price_for_night, (int, float)),
+                    start_date is None or isinstance(start_date, date),
+                    end_date is None or isinstance(end_date, date),
+                    property_id is None or isinstance(property_id, str),
+                    review_id is None or isinstance(review_id, str),
+                    status is None or isinstance(status, str),
+                ]
+            ):
+                raise TypeError
             if address_id:
                 self.address_id = address_id
             elif owner_id:
@@ -60,6 +93,9 @@ class Advertisment:
                 self.status = status
             else:
                 result = False
+        except TypeError:
+            print("Error: something wrong with types")
+            return False
         except:
             result = False
         return result
